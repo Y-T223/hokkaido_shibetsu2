@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>標津サーモン科学館｜サケの町・標津で出会う、川と海のものがたり</title>
+<meta name="description" content="サケ科魚類の展示数日本一。標津川と直結した魚道水槽で、秋の遡上と産卵を間近に観察できる標津サーモン科学館。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ai:#17283c;--ai-deep:#0f1b2a;--paper:#e8e9e4;--ink:#1c2430;--gold:#a8884c;--gold-l:#cdb27a;--mute:#6b7280;--line:#c9c6bb}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN",serif;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;letter-spacing:.04em}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h2{font-weight:500;font-size:clamp(24px,4vw,32px);letter-spacing:.14em;line-height:1.6;margin-bottom:36px}
+.fig{background:#2a3d55;overflow:hidden}
+.fig img{width:100%;height:100%;object-fit:cover}
+.cap{font-size:13px;color:var(--mute);margin-top:10px}
+
+/* hero */
+.hero{position:relative;min-height:100vh;background:var(--ai-deep);color:#f1efe7;display:flex;align-items:center;overflow:hidden;padding:0}
+.hero .fig{position:absolute;inset:0;background:var(--ai-deep)}
+.hero .fig img{opacity:.55}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,27,42,.92) 0%,rgba(15,27,42,.35) 60%,rgba(15,27,42,.1) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%;display:flex;gap:40px;align-items:flex-start;padding-top:80px;padding-bottom:80px}
+.vt{writing-mode:vertical-rl;font-size:clamp(34px,6.4vw,64px);font-weight:500;letter-spacing:.3em;line-height:1.5;border-left:1px solid var(--gold);padding-left:28px;height:min(70vh,520px)}
+.hero-sub{align-self:flex-end;max-width:360px;font-size:15px;color:#d9d6c9}
+.hero-sub small{display:block;margin-top:18px;color:var(--gold-l);font-size:13px;letter-spacing:.2em}
+
+/* intro */
+.intro{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.intro .fig{aspect-ratio:3/2}
+.intro p+p{margin-top:1.2em}
+.lead{font-size:18px;line-height:2.1}
+
+/* band */
+.band{background:var(--ai);color:#eceae0}
+.band h2{color:#f4f1e6}
+.band .gold{color:var(--gold-l)}
+.pick{display:grid;grid-template-columns:5fr 4fr;gap:56px;align-items:center}
+.pick .fig{aspect-ratio:4/5;background:#243850}
+.season{margin-top:28px;border-top:1px solid rgba(205,178,122,.5)}
+.season div{display:flex;gap:24px;padding:14px 0;border-bottom:1px solid rgba(205,178,122,.25)}
+.season dt{min-width:5.5em;color:var(--gold-l)}
+.season dd{margin:0}
+
+/* history */
+.history{max-width:640px}
+.history p+p{margin-top:1.2em}
+
+/* reviews */
+.rev-list{display:grid;gap:0}
+.rev{padding:36px 0;border-top:1px solid var(--line)}
+.rev:last-child{border-bottom:1px solid var(--line)}
+.stars{color:var(--gold);letter-spacing:.2em;font-size:18px;margin-bottom:12px}
+.rev p{max-width:42em}
+.rev p+p{margin-top:.9em}
+.src{margin-top:12px;font-size:13px;color:var(--mute)}
+
+/* info */
+.info{background:#dfe0d9}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;vertical-align:top;padding:20px 0;border-bottom:1px solid var(--line);font-weight:400}
+th{width:9em;color:var(--gold);font-weight:500;padding-right:16px}
+td a{text-decoration-color:var(--gold);text-underline-offset:4px}
+
+/* map */
+.map{border:1px solid var(--ai);padding:10px;background:#f3f2ec}
+.map iframe{width:100%;height:420px;border:0;display:block}
+.btn-row{margin-top:24px;text-align:center}
+.btn{display:inline-block;padding:16px 44px;background:var(--ai);color:#f4f1e6;text-decoration:none;letter-spacing:.2em;border:1px solid var(--ai);transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--ai)}
+
+/* sns */
+.sns{display:flex;gap:18px;margin-top:40px;justify-content:center}
+.sns a{width:48px;height:48px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--ai);transition:background .2s,color .2s}
+.sns a:hover{background:var(--ai);color:var(--gold-l)}
+.sns svg{width:22px;height:22px;fill:currentColor}
+
+footer{background:var(--ai-deep);color:#b9b8ae;text-align:center;padding:40px 24px;font-size:13px;letter-spacing:.14em}
+
+@media(max-width:760px){
+ section{padding:72px 0}
+ .intro,.pick{grid-template-columns:1fr;gap:36px}
+ .hero .wrap{flex-direction:column;align-items:flex-start;gap:28px}
+ .vt{height:360px}
+ .hero-sub{align-self:flex-start}
+ th,td{display:block;width:100%;padding:6px 0}
+ th{padding-top:20px;border-bottom:0}
+ td{padding-bottom:20px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="fig"><img src="images/1.jpg" alt="標津川と直結した魚道水槽を遡上するサケの群れ"></div>
+  <div class="wrap">
+    <h1 class="vt">川を遡る、いのちのものがたり</h1>
+    <p class="hero-sub">北海道標津町、サケの町に建つ自然・科学博物館。サケ科魚類の展示数日本一を誇る、標津サーモン科学館です。<small>標津サーモン科学館</small></p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap intro">
+    <div>
+      <h2>サケ科の魚たちが、<br>ここに集う。</h2>
+      <p class="lead">海を巡り、生まれた川へ帰るサケ。その暮らしを、日本一の展示数でご覧いただけます。</p>
+      <p>海や川に生息するさまざまなサケ類を一堂に展示。標津川の産卵シーンを再現した大水槽や、サケの卵・稚魚の飼育体験コーナーが、代表的な見どころです。</p>
+    </div>
+    <div>
+      <div class="fig" style="aspect-ratio:3/2"><img src="images/2.jpg" alt="サケ科の魚が泳ぐ大水槽の前に立つ来館者の後ろ姿"></div>
+      <p class="cap">大水槽〜中水槽に広がる、サケ科魚類の世界</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap pick">
+    <div>
+      <div class="fig"><img src="images/3.jpg" alt="水槽の中で育つサケの発眼卵と稚魚のクローズアップ"></div>
+    </div>
+    <div>
+      <h2><span class="gold">いちおし</span><br>魚道水槽で見る遡上</h2>
+      <p>標津川と直結した魚道水槽では、秋のシロザケやカラフトマスの遡上を、水中の目線で観察できます。</p>
+      <dl class="season">
+        <div><dt>9月〜10月</dt><dd>遡上の観察</dd></div>
+        <div><dt>11月</dt><dd>産卵行動の観察</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>サケの町が育んだ、<br>博物館のはじまり</h2>
+    <div class="history">
+      <p>1991年、北海道標津町に開館した自然・科学博物館です。地域のシンボルであるサケと、その生態系について深く学べる施設として設立されました。</p>
+      <p>標津町は「サケの町」として知られ、サケの水揚げ量は北海道でも有数です。「サケ文化の伝承」「自然保護や資源保護意識の啓発」「地域の教育や観光促進」「町の文化のシンボル」を掲げ、サケの生態や水産業の情報を、市民や観光客の皆さまにお届けしています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="info" style="background:var(--paper);padding-top:0">
+  <div class="wrap">
+    <h2>来館者の声</h2>
+    <div class="rev-list">
+      <article class="rev">
+        <div class="stars" aria-label="5段階中4">★★★★</div>
+        <p>平日に利用しました。<br>入館料は大人650円で、大水槽〜中水槽でサーモン中心の魚を見ることが出来ます。大型のチョウザメもいましたが水が濁っておりほんの一部しか見れませんでした。</p>
+        <p>イトウに餌やり（100円）などもあり、水族館感覚で楽しむことが出来ます。併設のレストランも利用したかったですが残念ながら貸切となっていました。</p>
+        <div class="src">Googleマップの口コミより</div>
+      </article>
+      <article class="rev">
+        <div class="stars" aria-label="5段階中5">★★★★★</div>
+        <p>昔、ぬし釣りというゲームが好きでした。渓流や山上湖などの奥深くには、多くのマスがいて、どれも結構立派なサイズで。そんなぬし釣りにいたマス類が勢ぞろいしているのを、生で拝むことができました。</p>
+        <p>ニジマス、サツキマス、カワマス……アメマス、サクラマス、みな揃ってます。特にニジマスのアルビノ種は初めて見ました。こんなにたくさんアルビノ種のニジマスが揃っているところって、そんなないんじゃないでしょうか？</p>
+        <p>チョウザメに直接手渡しで餌をあげれたり（手に吸い付かれます）、ドクターフィッシュもちゃんと仕事をしてくれるドクターフィッシュです。湿原の大型魚イトウも山ほどいます。</p>
+        <p>中標津という、やや観光ルートから外れた場所にある施設ですが、他では得難い川魚体験ができるので、ぜひ近くを通ったら寄ってみていただきたいです。</p>
+        <div class="src">Googleマップの口コミより</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="info">
+  <div class="wrap">
+    <h2>施設案内</h2>
+    <table>
+      <tr><th scope="row">施設名</th><td>標津サーモン科学館</td></tr>
+      <tr><th scope="row">住所</th><td>北海道標津町北1西6丁目1番1-1号<br>標津サーモンパーク内</td></tr>
+      <tr><th scope="row">電話番号</th><td><a href="tel:0153821141">0153-82-1141</a></td></tr>
+      <tr><th scope="row">休館日</th><td>2月・3月・4月・11月は水曜休館（祝日の場合は翌日休）<br>12月〜1月は冬期休館<br>5月〜10月は無休</td></tr>
+      <tr><th scope="row">公式サイト</th><td><a href="https://s-salmon.com/" target="_blank" rel="noopener">https://s-salmon.com/</a></td></tr>
+      <tr><th scope="row">お問い合わせ</th><td><a href="https://s-salmon.com/contact.html" target="_blank" rel="noopener">お問い合わせフォーム</a></td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>アクセス</h2>
+    <div class="map">
+      <iframe title="標津サーモン科学館の地図" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=%E6%A8%99%E6%B4%A5%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E7%A7%91%E5%AD%A6%E9%A4%A8&output=embed&hl=ja"></iframe>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E6%A8%99%E6%B4%A5%E3%82%B5%E3%83%BC%E3%83%A2%E3%83%B3%E7%A7%91%E5%AD%A6%E9%A4%A8" target="_blank" rel="noopener">Googleマップで地図を開く</a>
+    </div>
+    <div class="sns">
+      <a href="https://www.instagram.com/shibetsu_salmon_museum/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.4A4.6 4.6 0 1 0 12 16.6 4.6 4.6 0 0 0 12 7.4Zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm5.9-7.8a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0ZM21.9 8c-.1-1.5-.4-2.800-1.500-3.900S18 2.700 16.500 2.600C14.900 2.500 9.100 2.500 7.500 2.600 6 2.700 4.700 3 3.600 4.100S2.100 6.500 2 8c-.1 1.600-.1 7.400 0 9 .1 1.500.4 2.800 1.500 3.900s2.400 1.400 3.900 1.500c1.600.1 7.400.1 9 0 1.500-.1 2.800-.4 3.900-1.500s1.400-2.400 1.500-3.900c.1-1.600.1-7.400 0-9Zm-2 10.800a3.300 3.300 0 0 1-1.900 1.900c-1.300.5-4.300.4-5.700.4s-4.400.1-5.700-.4a3.300 3.300 0 0 1-1.900-1.900c-.5-1.300-.4-4.300-.4-5.700s-.1-4.400.4-5.700A3.300 3.300 0 0 1 6.300 5.500c1.300-.5 4.300-.4 5.700-.4s4.400-.1 5.700.4a3.300 3.300 0 0 1 1.900 1.900c.5 1.300.4 4.300.4 5.700s.1 4.400-.4 5.700Z"/></svg>
+      </a>
+      <a href="https://x.com/shibetsu_salmon" target="_blank" rel="noopener" aria-label="X（旧Twitter）">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.800 3h3.100l-6.800 7.700L22 21h-6.200l-4.900-6.300L5.300 21H2.200l7.200-8.300L2 3h6.400l4.400 5.800L17.800 3Zm-1.100 16.200h1.700L7.400 4.700H5.600l11.100 14.500Z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>© 標津サーモン科学館（標津サーモンパーク内）</footer>
+</body>
+</html>
